@@ -15,7 +15,7 @@ Currently the library supports Key, BlobKey, Text, GeoPt, Cursor and Search Curs
 Maven
 ---
 
-Group org.extrema-sistemas, package jackson4gae. 
+Group `org.extrema-sistemas`, package `jackson4gae`. 
 
 Initialization
 ---
