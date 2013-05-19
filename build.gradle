@@ -1,0 +1,81 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+apply plugin: 'signing'
+apply from: 'https://raw.github.com/icoloma/gradle-plugins/master/providedCompile.gradle'
+apply from: 'https://raw.github.com/icoloma/gradle-plugins/master/artifacts.gradle'
+
+project.version='1.0'
+project.group='org.extrema-sistemas'
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    all*.exclude module: 'commons-logging'
+}
+
+dependencies {
+
+	compile			"com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}",
+                    "org.codehaus.jackson:jackson-core-asl:1.9.2",
+                    "org.codehaus.jackson:jackson-mapper-asl:1.9.2"
+					
+	testCompile		"junit:junit:4.5",
+                    "com.google.appengine:appengine-testing:${appengineVersion}",
+                    "com.google.appengine:appengine-api-stubs:${appengineVersion}"
+                    
+}
+
+
+artifacts {
+    archives jar
+}
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+
+    repositories.mavenDeployer {
+        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+ 
+        pom.project {
+            name project.name
+            packaging 'jar'
+            description 'Jackson4GAE is a collection of Jackson serializers and deserializers of common Google AppEngine data types.'
+            url 'http://www.github.com/icoloma/jackson4gae/'
+            scm {
+                url 'http://www.github.com/icoloma/jackson4gae/'
+                connection "git://github.com/icoloma/jackson4gae.git"
+                developerConnection "git@github.com:icoloma/jackson4gae.git"
+            }
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    distribution 'repo'
+                }
+            }
+            developers {
+               developer {
+                   id 'icoloma'
+                   name 'Nacho Coloma'
+               }
+           }
+        }
+        uniqueVersion = true
+        configuration = configurations.archives
+        
+        snapshotRepository(url: 'http://oss.sonatype.org/content/repositories/snapshots') {
+            authentication(userName: sonatypeUsername, password: sonatypePassword)
+        }
+        
+        repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2') {
+            authentication(userName: sonatypeUsername, password: sonatypePassword)
+        }
+    }
+}
+

@@ -1,0 +1,11 @@
+build
+bin
+.gradle
+.classpath
+.project
+.settings/org.eclipse.jdt.core.prefs
+*.iml
+*.ipr
+*.eml
+*.iws
+out
