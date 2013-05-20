@@ -33,13 +33,9 @@ Initialization
 To use, just add the following to your ObjectMapper initialization code:
 
 ```Java
-// replace the class list according to your needs
+// modify this list including what you need to serialize
 ObjectMapperSetup.addMixins(objectMapper,
-  Key.class,
-	BlobKey.class,
-	GeoPt.class,
-	Text.class,
-	Cursor.class
+  Key.class, BlobKey.class, GeoPt.class, Text.class, Cursor.class
 );
 ```
 
