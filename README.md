@@ -13,7 +13,7 @@ Your class can be serialized as JSON including GAE-specific classes:
 }
 ```
 
-Currently the library supports Key, BlobKey, Text, GeoPt, Cursor and Search Cursors.
+Currently the library supports `Key`, `BlobKey`, `Text`, `GeoPt`, `Cursor` and `Search Cursors`.
 
 Maven
 ---
