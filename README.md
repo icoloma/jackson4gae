@@ -1,3 +1,6 @@
+Jackson4GAE
+===
+
 Jackson4GAE is a Java library of [Jackson](http://jackson.codehaus.org/) serializers and deserializers for common Google AppEngine data types.
 
 Your class can be serialized as JSON including GAE-specific classes:
@@ -15,7 +18,14 @@ Currently the library supports Key, BlobKey, Text, GeoPt, Cursor and Search Curs
 Maven
 ---
 
-Group `org.extrema-sistemas`, package `jackson4gae`. 
+Include this in your pom.xml:
+
+```XML
+<dependency>
+   <groupId>org.extrema-sistemas</groupId>
+   <artifactId>jackson4gae</artifactId>
+</dependency>
+```
 
 Initialization
 ---
