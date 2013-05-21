@@ -15,6 +15,15 @@ Your class can be serialized as JSON including GAE-specific classes:
 
 Currently the library supports `Key`, `BlobKey`, `Text`, `GeoPt`, `Cursor` and `Search Cursors`.
 
+| Class | Serialized as  | Example
+| ------------- | ------------- | ------------- |
+| Key | `Key.getKind()` + <br> { `Key.getId()` or `Key.getName()` } | `"Invoice(20)"` <br> `"User('icoloma')"` |
+| BlobKey | `BlobKey.getKeyString()` | `"H9gv9XtAEst7S9JaBoyDmA"` |
+| Text | `Text.getValue()` | `"foobar"` |
+| GeoPt | Json object with `lat` and `lng` | `{ lat: 0.234, lng: 0.345 }` |
+| Cursor | `Cursor.toWebSafeString()` | `"E-ABAIICHmoRamFja3NvbjRnYWUtdGVzdHNyCQsSA2ZvbxgBDBQ"` |
+| Search cursor | `Cursor.toWebSafeString()` | `"E-ABAIICHmoRamFja3NvbjRnYWUtdGVzdHNyCQsSA2ZvbxgBDBQ"` |
+
 Maven
 ---
 
