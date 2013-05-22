@@ -42,10 +42,7 @@ Initialization
 To use, just add the following to your ObjectMapper initialization code:
 
 ```Java
-// modify this list including what you need to serialize
-ObjectMapperSetup.addMixins(objectMapper,
-  Key.class, BlobKey.class, GeoPt.class, Text.class, Cursor.class
-);
+objectMapper.registerModule(new GaeJacksonModule());
 ```
 
 ObjectMapper is not cheap to initialize, so you should keep the instance as a singleton somewhere, preferably in your Dependency Injection configuration.
