@@ -6,7 +6,7 @@ apply plugin: 'signing'
 apply from: 'https://raw.github.com/icoloma/gradle-plugins/master/providedCompile.gradle'
 apply from: 'https://raw.github.com/icoloma/gradle-plugins/master/artifacts.gradle'
 
-project.version='1.0'
+project.version='1.1'
 project.group='org.extrema-sistemas'
 
 repositories {
@@ -20,6 +20,7 @@ configurations {
 dependencies {
 
 	compile			"com.google.appengine:appengine-api-1.0-sdk:${appengineVersion}",
+                    "com.google.guava:guava:14.0.1",
                     "org.codehaus.jackson:jackson-core-asl:1.9.2",
                     "org.codehaus.jackson:jackson-mapper-asl:1.9.2"
 					
