@@ -24,6 +24,8 @@ Currently the library supports `Key`, `BlobKey`, `Text`, `GeoPt`, `Cursor` and `
 | Cursor | `Cursor.toWebSafeString()` | `"E-ABAIICHmoRamFja3NvbjRnYWUtdGVzdHNyCQsSA2ZvbxgBDBQ"` |
 | Search cursor | `Cursor.toWebSafeString()` | `"E-ABAIICHmoRamFja3NvbjRnYWUtdGVzdHNyCQsSA2ZvbxgBDBQ"` |
 
+[![Analytics](https://ga-beacon.appspot.com/UA-3159223-5/icoloma/jackson4gae)](https://github.com/icoloma/jackson4gae)
+
 Maven
 ---
 
